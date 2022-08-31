@@ -7,8 +7,9 @@ app.use(express.json())
 app.use(cors())
  
  let users = []
+
  function  randomNumber(){
-   return Math.floor(Math.randomNumber() * 10000)
+   return Math.floor(Math.random() * 10000)
  }
 
  app.post('/user',(req,res)=>{
