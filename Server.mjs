@@ -27,9 +27,10 @@ app.use(cors())
  app.get('/user/:userId',(req, res)=>{
     let userId = req.params.userId;
     let isFond = false;
-    for(let i = 0; i<users.length; i++){
+
+    for(let i = 0; i < users.length; i++){
       if(users[i].id === userId){
-         res.send(userId[i])
+         res.send(users[i])
          isFond = true;
          break;
       }
