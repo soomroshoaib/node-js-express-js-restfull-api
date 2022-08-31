@@ -14,6 +14,7 @@ app.use(cors())
 
  app.post('/user',(req,res)=>{
     console.log(req.body)
+
     let newuser = {
       id: randomNumber(),
       fullName: req.body.fullName,
@@ -27,11 +28,12 @@ app.use(cors())
 
      // single user create 
  app.get('/user/:userId',(req, res)=>{
+
     let userId = req.params.userId;
     let isFond = false;
 
     for(let i = 0; i < users.length; i++){
-      if(users[i].id === userId){
+      if(users[i].id == userId){
          res.send(users[i])
          isFond = true;
          break;
@@ -48,13 +50,16 @@ app.use(cors())
    res.send(users)
 })
  
- app.put('/user/:useId',(req, res)=>{
+ app.put('/user/:userId',(req, res)=>{
     req.send("user is modify     ")
-    let userId = req.params.useId
+
+
+    let userId = req.params.userId
+
     let userIndex = -1 
     for(let i = 0; i < users.length; i++){
-      if(users[i].id === userId){
-         // res.send(userId[i])
+      if(users[i].id == userId){
+        // res.send(userId[i])
          userIndex = i ; 
          break;
       }
@@ -76,9 +81,9 @@ app.use(cors())
  })
  
  app.delete('/user/:userId',(req, res)=>{
-    req.send("user is deleted         ")
+    //req.send("user is deleted         ")
 
-    let userId = req.params.useId
+    let userId = req.params.userId
     let userIndex = -1 
     for(let i = 0; i<users.length; i++){
       if(users[i].id === userId){
