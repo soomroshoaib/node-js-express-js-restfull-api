@@ -5,15 +5,16 @@ const app = express();
 
 app.use(express.json())
 app.use(cors())
+ 
  let users = []
- function  random(){
-   return Math.floor(Math.random() * 10000)
+ function  randomNumber(){
+   return Math.floor(Math.randomNumber() * 10000)
  }
 
  app.post('/user',(req,res)=>{
     console.log(req.body)
     let newuser = {
-      id: random(),
+      id: randomNumber(),
       fullName: req.body.fullName,
       userName: req.body.userName,
       password: req.body.password
@@ -50,10 +51,10 @@ app.use(cors())
     req.send("user is modify     ")
     let userId = req.params.useId
     let userIndex = -1 
-    for(let i = 0; i<users.length; i++){
+    for(let i = 0; i < users.length; i++){
       if(users[i].id === userId){
-         res.send(userId[i])
-         userIndex = i 
+         // res.send(userId[i])
+         userIndex = i ; 
          break;
       }
     }
