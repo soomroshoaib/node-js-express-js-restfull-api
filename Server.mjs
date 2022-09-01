@@ -22,7 +22,7 @@ app.use(cors())
       password: req.body.password
     }
     users.push(newuser)
-    res.send("user is created ")
+    res.send("user is created  soomro ")
 
  })
 
