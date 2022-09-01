@@ -70,10 +70,10 @@ app.use(cors())
       if(req.body.fullName){
          users[userIndex].fullName = req.body.fullName
       };
-      if(req.body.userName){
+      if(req.body.userName){ 
          users[userIndex].userName = req.body.userName
       }
-      if(users.body.password){
+      if(req.body.password){
          users[userIndex].password = req.body.password
       }
       res.send(users[userIndex])
